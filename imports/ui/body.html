@@ -6,18 +6,24 @@
       <input type="checkbox" />
         Hide Completed Tasks
       </label> -->
-      {{> loginButtons}}
+      <!-- {{> loginButtons}} -->
+    </header>
+    <div>
       {{#if currentUser}}
+      {{> logout}}
       <form class="new-task">
         <input type="text" name="text" placeholder="Type to add new task" />
       </form>
+      {{else}}
+      <div class="login-box">
+        {{> login}}
+      </div>
       {{/if}}
-    </header>
+    </div>
     <ul>
       {{#each tasks}}
         {{> task}}
       {{/each}}
     </ul>
-    {{> login}}
   </div>
 </body>

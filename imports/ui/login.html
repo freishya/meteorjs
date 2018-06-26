@@ -1,16 +1,13 @@
 <template name="login">
-  <div class="title">LOGIN</div>
-  <form>
-    <div class="input">
-      <label for="name">Username</label>
-      <input type="text" name="username" placeholder="uname">
-      <span class="spin"></span>
-    </div>
-    <div class="input">
-      <label for="pass">Password</label>
-      <input type="password" name="password" placeholder="pssd">
-      <span class="spin"></span>
-    </div>
-    <input type="submit" value="Register">
+  <form class="login-form">
+    <p class="login-text">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-lock fa-stack-1x"></i>
+      </span>
+    </p>
+      <input type="text" name="username" placeholder="Username" autofocus="true" required="true" class="login-username">
+      <input type="password" name="password" placeholder="Password" required="true" class="login-password">
+    <input type="submit" value="Login" class="login-submit">
   </form>
 </template>

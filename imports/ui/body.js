@@ -7,6 +7,7 @@ import { Tasks } from '../api/tasks.js';
 import './task.js';
 import './body.html';
 import './login.html';
+import './logout.html';
 
 
 Template.body.onCreated(function bodyOnCreated() {
@@ -37,9 +38,31 @@ Template.body.events({
     Meteor.call('tasks.insert', text);
 
     target.text.value = '';
-    //console.log(Meteor.user());
   },
+
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
+  },
+
+  'submit .login-form'(event){
+    event.preventDefault();
+
+    const target = event.target;
+
+    var username = target.username.value;
+    var password = target.password.value;
+
+    target.username.value = '';
+    target.password.value = '';
+    Meteor.loginWithPassword(username,password,function(error){
+      if(error){
+        console.log(error.reason);
+      }
+    });
+  },
+
+  'click .logout'(event){
+    event.preventDefault();
+    Meteor.logout();
   },
 });

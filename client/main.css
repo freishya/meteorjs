@@ -1,9 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+@import url(https://use.fontawesome.com/releases/v5.1.0/css/all.css);
+
 /* CSS declarations go here */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #315481;
+  /* background-color: #315481;
   background-image: linear-gradient(to bottom, #315481, #e4e1e1 100%);
-  background-attachment: fixed;
+  background-attachment: fixed; */
 
   position: absolute;
   top: 0;
@@ -14,89 +17,27 @@ body {
   padding: 0;
   margin: 0;
 
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-weight: 100;
 }
 
 .container {
-  /* max-width: 600px; */
-  max-width: 85%;
+  max-width: 65%;
   margin: 0 auto;
   min-height: 100%;
   /* background: #ffffff; */
-  background: rgba(181, 181, 181, 0.7);
+  /* background: rgba(181, 181, 181, 0.7); */
+  background: transparent;
 }
 
-/* Login */
-/* title */
-.title {
-  width: 100%;
-  float: left;
-  line-height: 46px;
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: rgba(106, 106, 106, 0.7);
+.login-box {
+  background-image: linear-gradient(to bottom, #0c0c0d, #404040 100%);
+  /* background-attachment: fixed; */
+  font-weight: 100;
+  display: flex;
+  overflow: hidden;
   position: relative;
-}
-
-.title:before {
-  content: "";
-  width: 10px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: -50px;
-  background: rgba(106, 106, 106, 0.7);
-}
-
-/* input */
-.input,
-.input label,
-.input input,
-.input .spin,
-.button,
-.button button .button.login button i.fa,
-.material-button .shape:before,
-.material-button .shape:after,
-.button.login button {
-   transition: 300ms cubic-bezier(.4, 0, .2, 1);
-   -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1);
-   -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);
-}
-
-.input,
-.input label,
-.input input,
-.input .spin,
-.button,
-.button button {
-   width: 100%;
-   float: left;
-}
-
-.input input,
-.input label,
-.button button {
-   font-family: 'Roboto', sans-serif;
-   font-size: 24px;
-   color: rgba(0, 0, 0, 0.8);
-   font-weight: 300;
-}
-
-.input label {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  z-index: 2;
-  cursor: pointer;
-  line-height: 60px;
-}
-
-.input input {
-   height: 60px;
-   top: 10px;
-   border: none;
-   background: transparent;
+  flex-direction: column;
 }
 
 header {
@@ -106,8 +47,133 @@ header {
   position: relative;
 }
 
-#login-buttons {
+/* Login */
+.login-form {
+  min-height: 10rem;
+  margin: auto;
+  max-width: 50%;
+  padding: .5rem;
+}
+
+.login-text {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: .5rem;
+  text-align: center;
+}
+
+.login-text .fa-stack-1x{
+  color: black;
+}
+
+.login-username, .login-password {
+  background: transparent;
+  border: 0 solid;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  color: white;
   display: block;
+  margin: 1rem;
+  padding: .5rem;
+  transition: 250ms background ease-in;
+  width: calc(100% - 3rem);
+}
+
+.login-username:focus, .login-password:focus {
+  background: white;
+  color: black;
+  transition: 250ms background ease-in;
+}
+
+.login-submit {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  display: block;
+  margin: 1rem auto;
+  min-width: 1px;
+  padding: .25rem;
+  transition: 250ms background ease-in;
+}
+
+.login-submit:hover, .login-submit:focus {
+  background: white;
+  color: black;
+  transition: 250ms background ease-in;
+}
+
+.logout {
+  border: 1px solid black;
+  background: transparent;
+  color: black;
+  display: block;
+  margin: .25rem auto;
+  min-width: 1px;
+  padding: .25rem;
+  transition: 250ms background ease-in;
+  right: 0;
+  margin-right: 0 !important;
+}
+
+.logout:hover, .logout:focus {
+  background: black;
+  color: white;
+  transition: 250ms background ease-in;
+}
+
+
+/*
+[class*=underlay] {
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.underlay-black {
+  background: rgba(0,0,0,0.9);
+  z-index: -1;
+}
+.underlay-photo {
+  animation: hue-rotate 6s infinite
+  background: url('https://31.media.tumblr.com/41c01e3f366d61793e5a3df70e46b462/tumblr_n4vc8sDHsd1st5lhmo1_1280.jpg');
+  background-size: cover;
+  -webkit-filter: grayscale(30%);
+  z-index: -1;
+}
+
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: grayscale(30%) hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: grayscale(30%) hue-rotate(360deg);
+  }
+} */
+
+/* Input */
+input ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+input ::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+input :-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+input:focus {
+  outline: 0 transparent solid;
+}
+input:focus ::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+input:focus ::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+input:focus :-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 h1 {
@@ -200,7 +266,6 @@ header .hide-completed {
    padding-bottom: 5px;
  }
 }
-
 
 /* Reset */
 *,
